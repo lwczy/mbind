@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Owatch</title>
+    <script src="mbind.js"></script>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Owatch</h1>
+    <a>文件列表</a><br>
+    <a @bind="time">
+        ${time}
+    </a>
+    <div @foreach="v,list">
+        <a>${v}</a><br>
+    </div>
+    <input @bind="text"></input>
+    <input @bind="text"></input>
+    <a @bind="text">
+        ${text}
+    </a>
+    <script>
+        data = mbind({
+            time: "loading...",
+            list: [1, 2, 3],
+            text: "Hello world!"
+        }, document.body)
+
+        setInterval(() => data.time = new Date(), 1000)
+    </script>
+</body>
+
+</html>
