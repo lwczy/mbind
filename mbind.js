@@ -18,7 +18,6 @@ function mbind(data, root_element) {
 
     function contentparser(content) {
         content = content.replace(/\$\{(.*)\}/, '\${this.$($1)}')
-        console.log(content)
         return 'return \`' + content + '\`'
     }
 
